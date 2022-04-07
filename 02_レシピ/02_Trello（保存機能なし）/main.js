@@ -1,15 +1,51 @@
 const inputElement = document.getElementById("input-todo")
 const container = document.getElementById("cards-container")
-const addButton = document.getElementById("add-button")
+//const addButton = document.getElementById("add-button")
+const inputElement2 = document.getElementById("input-todo2")
+const container2 = document.getElementById("cards-container2")
+
+const inputElement3 = document.getElementById("input-todo3")
+const container3 = document.getElementById("cards-container3")
+
+inputElement.addEventListener("keypress", test_event)
+inputElement2.addEventListener("keypress", test_event2)
+inputElement3.addEventListener("keypress", test_event3)
 
 // 追加ボタンを押したときの処理を登録
-addButton.onclick = function () {
-  // カードを作成する
-  const card = createCard(inputElement.value)
-  container.append(card)
+function test_event(e) {
+  if (e.keyCode === 13) {
+    // カードを作成する
+    const card = createCard(inputElement.value)
+    container.append(card)
 
-  // 入力欄を空にする
-  inputElement.value = ""
+    // 入力欄を空にする
+    inputElement.value = ""
+    return false
+  }
+}
+
+function test_event2(e) {
+  if (e.keyCode === 13) {
+    // カードを作成する
+    const card2 = createCard(inputElement2.value)
+    container2.append(card2)
+
+    // 入力欄を空にする
+    inputElement2.value = ""
+    return false
+  }
+}
+
+function test_event3(e) {
+  if (e.keyCode === 13) {
+    // カードを作成する
+    const card3 = createCard(inputElement3.value)
+    container3.append(card3)
+
+    // 入力欄を空にする
+    inputElement3.value = ""
+    return false
+  }
 }
 
 // 共通の処理：テキストからカードを作成する
