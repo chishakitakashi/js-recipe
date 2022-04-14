@@ -17,7 +17,6 @@ function test_event(e) {
     // カードを作成する
     const card = createCard(inputElement.value)
     container.append(card)
-
     // 入力欄を空にする
     inputElement.value = ""
     return false
