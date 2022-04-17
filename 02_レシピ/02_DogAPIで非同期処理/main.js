@@ -1,6 +1,6 @@
 //const imageElement = document.getElementById("dog-image")
 //const buttonElement = document.getElementById("click_button")
-const inputElement = document.getElementById("input3-container")
+//const inputElement = document.getElementById("input3-container")
 //inputElement.addEventListener("keypress", test_event)
 const image3Element = document.getElementById("dog3-image")
 
@@ -32,10 +32,13 @@ const image3Element = document.getElementById("dog3-image")
 //   })
 
 window.onload = function () {
+  //ラジオボタンをグループで取得
   var checkOption = document.getElementsByName("RadioGroup1")
 
+  //グループ内のラジオボタンが押されたら発火
   checkOption.forEach(function (e) {
     e.addEventListener("click", function () {
+      //入力内容に応じてurlを作成
       const url =
         "https://dog.ceo/api/breed/hound/" +
         document.querySelector("input:checked[name=RadioGroup1]").value +
@@ -50,31 +53,7 @@ window.onload = function () {
           //console.log(image3Element.src)
         })
 
-      // 入力欄を空にする
-
       return false
     })
   })
-}
-
-function test_event(e) {
-  if (inputElement.value === null) {
-    // カードを作成する
-    //const name = inputElement.value
-    // console.log(inputElement.value)
-    // const url =
-    //   "https://dog.ceo/api/breed/hound/" + inputElement.value + "/images/random"
-    // console.log(url)
-    // console.log(inputElement.value)
-    // fetch("https://dog.ceo/api/breeds/list/all")
-    //   .then((res) => {
-    //     return res.json()
-    //   })
-    //   .then((data) => {
-    //     data.message = inputElement.value
-    //     console.log(data.message)
-    //     image3Element.src = data.message
-    //   })
-    //最後にrandomを付けることでデータが1つに絞られる
-  }
 }
